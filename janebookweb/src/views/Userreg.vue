@@ -6,9 +6,8 @@
         </div>
         <mt-field label="手机号" placeholder="请输入手机号" v-model="userphone"></mt-field>
         <mt-field label="密码" placeholder="请输入密码" v-model="userpwd" ></mt-field>
-        <div class="xyi">
-            <input type="checkbox" id="bool"><label for="bool">登录即同意用户协议和联通统一认证服务条款</label>
-        </div>
+        <mt-field label="确认密码" placeholder="请输入密码" v-model="userpwd" ></mt-field>
+        <mt-button type="danger">danger</mt-button>
     </div>
 </template>
 <script>
@@ -24,7 +23,7 @@ export default {
 <style scoped>
     .aaa{
         position: absolute;
-        top:25%;
+        top:20%;
         left:50%;
         margin-left:-160px;
     }
@@ -37,13 +36,8 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    .xyi{
+    .mint-button--normal {
         margin-top:1rem;
-    }
-    label{
         width:90%;
-        font-family: 微软雅黑;
-        font-size:1rem;
-        color:#8a8a8a;
     }
 </style>

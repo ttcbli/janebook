@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Userlogin from './views/Userlogin.vue'
+import Index from "./views/Index.vue"
+import Focus from "./views/Focus.vue"
+import Message from "./views/Message.vue"
+import Mine from "./views/Mine.vue"
+import uLogin from "./views/Userlogin.vue"
+import ureg from "./views/Userreg.vue"
 
 Vue.use(Router)
 
@@ -10,13 +15,20 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children:[
+        {path: '',redirect() {
+          return 'index'
+        }},
+        {path: 'index',name: 'Index',component: Index},
+        {path: 'focus',name: 'Focus',component: Focus},
+        {path: 'Message',name: 'Message',component: Message},
+        {path: 'Mine',name: 'Mine',component: Mine},
+        
+      ]
     },
-    {
-      path: '/Userlogin',
-      name: 'Userlogin',
-      component: Userlogin
-    },
+    {path: '/uLogin',name: 'uLogin',component: uLogin},
+    {path: '/ureg',name: 'ureg',component: ureg},
     {
       path: '/about',
       name: 'about',
